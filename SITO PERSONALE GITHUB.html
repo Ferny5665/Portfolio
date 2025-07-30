@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Mio Sito Personale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+    .cta {
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .cta a {
+      background: #00c9a7;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #00b494;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem auto;
+    }
+    .links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .links a:hover {
+      transform: scale(1.2);
+      color: #00c9a7;
+    }
+    .card-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card h3 {
+      margin-bottom: 1rem;
+    }
+    .card button {
+      background: #00c9a7;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    .card button:hover {
+      background: #00e6c3;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 201, 167, 0.6);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background: #2c3e50;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .modal-content h2 {
+      margin-bottom: 1rem;
+    }
+    .modal-content a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #00c9a7;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .modal-content a:hover {
+      background: #00b494;
+    }
+    .close-btn {
+      margin-top: 1rem;
+      background: transparent;
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fernando Mallardo</h1>
+    <p>Studente | Sviluppatore Web | Designer | Creativo Digitale</p>
+  </header>
+
+  <div class="cta">
+    <a href="https://drive.google.com/uc?export=download&id=1XrCA3-KSogI6VY6CxDEtjKbdaPDlYLyZ
+" download><i class="fas fa-download"></i> Scarica il mio CV</a>
+  </div>
+
+  <div class="links">
+    <a href="https://linkedin.com/in/tuo-profilo" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/tuo-utente" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="" target="_blank"><i class="fas fa-globe"></i></a>
+  </div>
+
+  <section class="card-section">
+    <div class="card">
+      <h3>Chi sono</h3>
+      <p>Studente 16 enne appassionato di tecnologia, sviluppo web e design moderno. Creo esperienze digitali che uniscono funzionalità e bellezza visiva.</p>
+    </div>
+    <div class="card">
+      <h3>Progetti</h3>
+      <p>Visita il mio portfolio per esplorare alcuni dei progetti a cui ho lavorato, tra cui siti responsive, web app e design interattivo.</p>
+      <button onclick="document.getElementById('modal').style.display='flex'">📂 Apri Progetti</button>
+    </div>
+    <div class="card">
+      <h3>Contattami</h3>
+      <p>Scrivimi su <a href="mailto:email@tuo.it" style="color:#00c9a7">mallardofernando3@gmail.com</a> o contattami su <p>Whatsapp al <a href="tel:+393338854194" style="color:#00c9a7">+39 333 885 4194</a></p></p>
+    </div>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Progetti</h2>
+      <a href="http://127.0.0.1:5500/Sito%20Ristorazione%20Vetrina.html#about">Sito Ristorante Vetrina</a>
+      <a href="http://127.0.0.1:5500/Sito%20Template.html">Template Ristorante Stock</a><br>
+      <button class="close-btn" onclick="document.getElementById('modal').style.display='none'">Chiudi</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Fernando Mallardo – Tutti i diritti riservati
+  </footer>
+</body>
+</html>
